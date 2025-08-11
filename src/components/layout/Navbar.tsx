@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Library, ShoppingBag, Shield, Hammer, LogIn, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ALLOWED_ADMIN_EMAILS } from "@/config/security";
 
 export default function Navbar() {
   const [userEmail, setUserEmail] = useState<string | null>(null);
@@ -38,7 +39,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6">
           <Link to="/modules" className={`story-link ${isActive("/modules")}`}><div className="flex items-center gap-2"><Library className="h-4 w-4"/>Library</div></Link>
           <Link to="/marketplace" className={`story-link ${isActive("/marketplace")}`}><div className="flex items-center gap-2"><ShoppingBag className="h-4 w-4"/>Marketplace</div></Link>
-          {role === "admin" && (
+          {userEmail && ALLOWED_ADMIN_EMAILS.includes(userEmail) && (
             <Link to="/admin" className={`story-link ${isActive("/admin")}`}><div className="flex items-center gap-2"><Shield className="h-4 w-4"/>Admin</div></Link>
           )}
         </div>

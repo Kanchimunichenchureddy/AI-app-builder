@@ -1,9 +1,12 @@
 import { SEO } from "@/components/SEO";
+import { ALLOWED_ADMIN_EMAILS } from "@/config/security";
 
 export default function Admin() {
   const raw = localStorage.getItem("app_user");
-  const role = raw ? (JSON.parse(raw).role as string) : null;
-  const can = role === "admin";
+  const user = raw ? (JSON.parse(raw) as { email?: string }) : null;
+  const email = (user?.email as string) || null;
+  const can = email ? ALLOWED_ADMIN_EMAILS.includes(email) : false;
+
   return (
     <main className="container mx-auto py-10">
       <SEO title="Admin – AI App Builder" description="Moderate submissions and view analytics." canonical="/admin" />
