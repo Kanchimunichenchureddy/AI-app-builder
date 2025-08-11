@@ -5,6 +5,13 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Navbar from "./components/layout/Navbar";
+import ModulesPage from "./pages/Modules";
+import Marketplace from "./pages/Marketplace";
+import Admin from "./pages/Admin";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import SignatureGlow from "./components/SignatureGlow";
 
 const queryClient = new QueryClient();
 
@@ -14,8 +21,15 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <SignatureGlow />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/modules" element={<ModulesPage />} />
+          <Route path="/marketplace" element={<Marketplace />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
