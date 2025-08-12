@@ -11,6 +11,9 @@ import Marketplace from "./pages/Marketplace";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Blog from "./pages/Blog";
 import SignatureGlow from "./components/SignatureGlow";
 
 const queryClient = new QueryClient();
@@ -25,6 +28,9 @@ const App = () => (
         <Navbar />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/modules" element={<ModulesPage />} />
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/admin" element={<Admin />} />
