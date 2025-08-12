@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Library, ShoppingBag, Shield, Hammer, LogIn, LogOut, Home, Info, Mail, Newspaper } from "lucide-react";
+import { Library, ShoppingBag, Shield, Hammer, LogIn, LogOut, Home, Info, Mail, Newspaper, ReceiptText, PackagePlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ALLOWED_ADMIN_EMAILS } from "@/config/security";
 
@@ -43,6 +43,16 @@ export default function Navbar() {
           <Link to="/contact" className={`story-link ${isActive("/contact")}`}><div className="flex items-center gap-2"><Mail className="h-4 w-4"/>Contact</div></Link>
           <Link to="/modules" className={`story-link ${isActive("/modules")}`}><div className="flex items-center gap-2"><Library className="h-4 w-4"/>Library</div></Link>
           <Link to="/marketplace" className={`story-link ${isActive("/marketplace")}`}><div className="flex items-center gap-2"><ShoppingBag className="h-4 w-4"/>Marketplace</div></Link>
+          {role === "buyer" && (
+            <Link to="/my-purchases" className={`story-link ${isActive("/my-purchases")}`}>
+              <div className="flex items-center gap-2"><ReceiptText className="h-4 w-4"/>Purchases</div>
+            </Link>
+          )}
+          {role === "seller" && (
+            <Link to="/sell-module" className={`story-link ${isActive("/sell-module")}`}>
+              <div className="flex items-center gap-2"><PackagePlus className="h-4 w-4"/>Sell</div>
+            </Link>
+          )}
           {userEmail && ALLOWED_ADMIN_EMAILS.includes(userEmail) && (
             <Link to="/admin" className={`story-link ${isActive("/admin")}`}><div className="flex items-center gap-2"><Shield className="h-4 w-4"/>Admin</div></Link>
           )}
