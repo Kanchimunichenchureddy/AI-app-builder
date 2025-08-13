@@ -13,12 +13,26 @@ export default function SellModule() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("19");
   const [category, setCategory] = useState("ui");
+  const [codeFile, setCodeFile] = useState<File | null>(null);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast({ title: "Submission received", description: "Thanks! We'll review your module. (Demo)" });
+    if (!codeFile) {
+      toast({ title: "Upload required", description: "Please attach your module code as a .zip or .tgz file." });
+      return;
+    }
+    const maxBytes = 50 * 1024 * 1024; // 50MB
+    if (codeFile.size > maxBytes) {
+      toast({ title: "File too large", description: "Max size is 50MB. Please compress your archive." });
+      return;
+    }
+    toast({
+      title: "Submission received",
+      description: "Thanks! File captured locally. Connect Supabase to enable real uploads.",
+    });
     setName("");
     setDescription("");
+    setCodeFile(null);
   };
 
   return (
@@ -55,6 +69,21 @@ export default function SellModule() {
                 </SelectContent>
               </Select>
             </div>
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="code">Upload code (.zip or .tgz, max 50MB)</Label>
+            <Input
+              id="code"
+              type="file"
+              accept=".zip,.tgz,.tar.gz"
+              onChange={(e) => setCodeFile(e.target.files?.[0] ?? null)}
+              required
+            />
+            {codeFile && (
+              <p className="text-xs text-muted-foreground">
+                Selected: {codeFile.name} ({Math.round(codeFile.size / 1024)} KB)
+              </p>
+            )}
           </div>
           <Button type="submit" variant="hero">Submit for Review</Button>
         </form>
