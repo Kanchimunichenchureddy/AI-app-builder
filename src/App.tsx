@@ -17,7 +17,7 @@ import Blog from "./pages/Blog";
 import SignatureGlow from "./components/SignatureGlow";
 import MyPurchases from "./pages/MyPurchases";
 import SellModule from "./pages/SellModule";
-
+import PreviewPage from "./pages/Preview";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -37,6 +37,7 @@ const App = () => (
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/my-purchases" element={<MyPurchases />} />
           <Route path="/sell-module" element={<SellModule />} />
+          <Route path="/preview/:id" element={<PreviewPage />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
