@@ -13,13 +13,13 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Blog from "./pages/Blog";
 import SignatureGlow from "./components/SignatureGlow";
 import MyPurchases from "./pages/MyPurchases";
 import SellModule from "./pages/SellModule";
 import PreviewPage from "./pages/Preview";
 import ChatDemo from "./pages/ChatDemo";
 import UserManagementDemo from "./pages/UserManagementDemo";
+import { FloatingChat } from "./components/FloatingChat";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -30,17 +30,16 @@ const App = () => (
       <BrowserRouter>
         <SignatureGlow />
         <Navbar />
+        <FloatingChat />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/modules" element={<ModulesPage />} />
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/my-purchases" element={<MyPurchases />} />
           <Route path="/sell-module" element={<SellModule />} />
           <Route path="/preview/:id" element={<PreviewPage />} />
-          <Route path="/chat-demo" element={<ChatDemo />} />
           <Route path="/user-management-demo" element={<UserManagementDemo />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />

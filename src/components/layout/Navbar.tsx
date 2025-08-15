@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Library, ShoppingBag, Shield, Hammer, LogIn, LogOut, Home, Info, Mail, Newspaper, ReceiptText, PackagePlus, MessageCircle, Users } from "lucide-react";
+import { Library, ShoppingBag, Shield, Hammer, LogIn, LogOut, Home, Info, Mail, ReceiptText, PackagePlus, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ALLOWED_ADMIN_EMAILS } from "@/config/security";
 
@@ -39,11 +39,9 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-6">
           <Link to="/" className={`story-link ${isActive("/")}`}><div className="flex items-center gap-2"><Home className="h-4 w-4"/>Home</div></Link>
           <Link to="/about" className={`story-link ${isActive("/about")}`}><div className="flex items-center gap-2"><Info className="h-4 w-4"/>About</div></Link>
-          <Link to="/blog" className={`story-link ${isActive("/blog")}`}><div className="flex items-center gap-2"><Newspaper className="h-4 w-4"/>Blog</div></Link>
           <Link to="/contact" className={`story-link ${isActive("/contact")}`}><div className="flex items-center gap-2"><Mail className="h-4 w-4"/>Contact</div></Link>
           <Link to="/modules" className={`story-link ${isActive("/modules")}`}><div className="flex items-center gap-2"><Library className="h-4 w-4"/>Library</div></Link>
           <Link to="/marketplace" className={`story-link ${isActive("/marketplace")}`}><div className="flex items-center gap-2"><ShoppingBag className="h-4 w-4"/>Marketplace</div></Link>
-          <Link to="/chat-demo" className={`story-link ${isActive("/chat-demo")}`}><div className="flex items-center gap-2"><MessageCircle className="h-4 w-4"/>Chat</div></Link>
           <Link to="/user-management-demo" className={`story-link ${isActive("/user-management-demo")}`}><div className="flex items-center gap-2"><Users className="h-4 w-4"/>Users</div></Link>
           {role === "buyer" && (
             <Link to="/my-purchases" className={`story-link ${isActive("/my-purchases")}`}>
