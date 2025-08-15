@@ -18,6 +18,8 @@ import SignatureGlow from "./components/SignatureGlow";
 import MyPurchases from "./pages/MyPurchases";
 import SellModule from "./pages/SellModule";
 import PreviewPage from "./pages/Preview";
+import ChatDemo from "./pages/ChatDemo";
+import UserManagementDemo from "./pages/UserManagementDemo";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/my-purchases" element={<MyPurchases />} />
           <Route path="/sell-module" element={<SellModule />} />
           <Route path="/preview/:id" element={<PreviewPage />} />
+          <Route path="/chat-demo" element={<ChatDemo />} />
+          <Route path="/user-management-demo" element={<UserManagementDemo />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
