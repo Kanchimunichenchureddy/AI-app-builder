@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, X, Minimize2 } from "lucide-react";
+import { Bot, X, Minimize2 } from "lucide-react";
 import { ChatWidget } from "@/modules/chat/components/ChatWidget";
 
 export function FloatingChat() {
@@ -35,7 +35,7 @@ export function FloatingChat() {
           className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90"
           size="icon"
         >
-          <MessageCircle className="h-6 w-6" />
+          <Bot className="h-6 w-6" />
         </Button>
       </div>
     );
@@ -48,7 +48,7 @@ export function FloatingChat() {
           <div className="p-4 border-b bg-muted/50">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <MessageCircle className="h-5 w-5 text-primary" />
+                <Bot className="h-5 w-5 text-primary" />
                 <span className="font-medium">Support Chat</span>
               </div>
               <div className="flex items-center gap-1">
