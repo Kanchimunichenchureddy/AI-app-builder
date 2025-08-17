@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Library, ShoppingBag, Shield, Hammer, LogIn, LogOut, Home, Info, Mail, ReceiptText, PackagePlus, Users } from "lucide-react";
+import { Library, ShoppingBag, Shield, Hammer, LogIn, LogOut, Home, Info, Mail, ReceiptText, PackagePlus, Users, Box } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ALLOWED_ADMIN_EMAILS } from "@/config/security";
 
@@ -43,6 +43,7 @@ export default function Navbar() {
           <Link to="/modules" className={`story-link ${isActive("/modules")}`}><div className="flex items-center gap-2"><Library className="h-4 w-4"/>Library</div></Link>
           <Link to="/marketplace" className={`story-link ${isActive("/marketplace")}`}><div className="flex items-center gap-2"><ShoppingBag className="h-4 w-4"/>Marketplace</div></Link>
           <Link to="/user-management-demo" className={`story-link ${isActive("/user-management-demo")}`}><div className="flex items-center gap-2"><Users className="h-4 w-4"/>Users</div></Link>
+          <Link to="/model-editor" className={`story-link ${isActive("/model-editor")}`}><div className="flex items-center gap-2"><Box className="h-4 w-4"/>3D Editor</div></Link>
           {role === "buyer" && (
             <Link to="/my-purchases" className={`story-link ${isActive("/my-purchases")}`}>
               <div className="flex items-center gap-2"><ReceiptText className="h-4 w-4"/>Purchases</div>
