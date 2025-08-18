@@ -18,7 +18,7 @@ import MyPurchases from "./pages/MyPurchases";
 import SellModule from "./pages/SellModule";
 import PreviewPage from "./pages/Preview";
 import ChatDemo from "./pages/ChatDemo";
-import UserManagementDemo from "./pages/UserManagementDemo";
+
 import ModelEditor from "./pages/ModelEditor";
 import { FloatingChat } from "./components/FloatingChat";
 const queryClient = new QueryClient();
@@ -41,7 +41,7 @@ const App = () => (
           <Route path="/my-purchases" element={<MyPurchases />} />
           <Route path="/sell-module" element={<SellModule />} />
           <Route path="/preview/:id" element={<PreviewPage />} />
-          <Route path="/user-management-demo" element={<UserManagementDemo />} />
+          
           <Route path="/model-editor" element={<ModelEditor />} />
           <Route path="/admin" element={<Admin />} />
           <Route path="/login" element={<Login />} />
