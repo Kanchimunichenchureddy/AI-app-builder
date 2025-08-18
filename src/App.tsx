@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Navbar from "./components/layout/Navbar";
-import ModulesPage from "./pages/Modules";
+
 import Marketplace from "./pages/Marketplace";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
@@ -36,7 +36,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/modules" element={<ModulesPage />} />
+          
           <Route path="/marketplace" element={<Marketplace />} />
           <Route path="/my-purchases" element={<MyPurchases />} />
           <Route path="/sell-module" element={<SellModule />} />
