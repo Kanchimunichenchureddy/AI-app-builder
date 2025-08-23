@@ -23,27 +23,31 @@ export default function Index() {
         <div className="absolute inset-0 bg-gradient-surface opacity-20" aria-hidden="true"></div>
         
         {/* 3D Background */}
-        <div className="absolute inset-0 z-0">
-          <Suspense fallback={<div className="w-full h-full bg-gradient-surface opacity-50" />}>
-            <Scene3D enableAnimations={enableAnimations} />
-          </Suspense>
+        <div className="absolute inset-0 z-0 flex justify-center items-center">
+          <div style={{ width: '50%', height: '100%' }}>
+            <Suspense fallback={<div className="w-full h-full bg-gradient-surface opacity-50" />}>
+              <Scene3D enableAnimations={enableAnimations} />
+            </Suspense>
+          </div>
         </div>
 
         {/* Content Overlay */}
         <div className="relative z-10 container mx-auto px-8">
           <div className="text-center space-y-8">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white drop-shadow-lg" style={{ marginTop: '-148px' }}>
+              AI App Builder
+              {/*  <span className="block text-primary-glow">Module Library</span>*/}
+            </h1>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: enableAnimations ? 0.8 : 0, ease: "easeOut" }}
             >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white drop-shadow-lg">
-                AI App Builder
-                <span className="block text-primary-glow">Module Library</span>
-              </h1>
+              {/* ...existing code... */}
             </motion.div>
             
-            <motion.p
+          {/*
+          <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: enableAnimations ? 0.8 : 0, delay: enableAnimations ? 0.2 : 0 }}
@@ -70,11 +74,12 @@ export default function Index() {
                 </Button>
               </Link>
             </motion.div>
+          */}
           </div>
         </div>
 
         {/* Animation Toggle - Fixed Position */}
-        <div className="absolute top-8 right-8 z-20">
+        <div className="absolute top-8 right-8 z-20" style={{ marginRight: '53px' }}>
           <AnimationToggle 
             enableAnimations={enableAnimations} 
             onToggle={setEnableAnimations} 
@@ -91,7 +96,7 @@ export default function Index() {
             transition={{ duration: enableAnimations ? 0.8 : 0 }}
             className="mb-6"
           >
-            <h2 className="text-3xl font-bold">Available Modules</h2>
+            <h2 className="text-3xl font-bold" style={{paddingTop:0, paddingBottom:0 }}>Available Modules</h2>
             <p className="text-muted-foreground mt-2">Select, customize, and integrate production-ready modules.</p>
           </motion.div>
           <motion.section 

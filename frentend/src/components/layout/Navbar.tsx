@@ -31,7 +31,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
-      <nav className="container mx-auto flex items-center justify-between py-3">
+  <nav className="container mx-auto flex items-center justify-between py-3" style={{ maxWidth: '1368px' }}>
         <Link to="/" className="flex items-center gap-2 hover-scale">
           <Hammer className="h-5 w-5 text-primary" />
           <span className="font-semibold">AI App Builder</span>
@@ -41,7 +41,7 @@ export default function Navbar() {
           <Link to="/about" className={`story-link ${isActive("/about")}`}><div className="flex items-center gap-2"><Info className="h-4 w-4"/>About</div></Link>
           <Link to="/contact" className={`story-link ${isActive("/contact")}`}><div className="flex items-center gap-2"><Mail className="h-4 w-4"/>Contact</div></Link>
           <Link to="/marketplace" className={`story-link ${isActive("/marketplace")}`}><div className="flex items-center gap-2"><ShoppingBag className="h-4 w-4"/>Marketplace</div></Link>
-          <Link to="/user-management-demo" className={`story-link ${isActive("/user-management-demo")}`}><div className="flex items-center gap-2"><Users className="h-4 w-4"/>Users</div></Link>
+          {/* <Link to="/user-management-demo" className={`story-link ${isActive("/user-management-demo")}`}><div className="flex items-center gap-2"><Users className="h-4 w-4"/>Users</div></Link> */}
           <Link to="/model-editor" className={`story-link ${isActive("/model-editor")}`}><div className="flex items-center gap-2"><Box className="h-4 w-4"/>3D Editor</div></Link>
           {role === "buyer" && (
             <Link to="/my-purchases" className={`story-link ${isActive("/my-purchases")}`}>

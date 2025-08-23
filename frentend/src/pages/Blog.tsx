@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+/*import { useMemo } from "react";
 import { SEO } from "@/components/SEO";
 import { Link } from "react-router-dom";
 
@@ -66,4 +66,4 @@ export default function Blog() {
       </section>
     </main>
   );
-}
+}*/
