@@ -1,16 +1,28 @@
-# Welcome to your Lovable project
+# Welcome to your AI App Builder project
 
 ## Project info
 
+ HEAD:frentend/README.md
 **URL**: http://localhost:8080/
+**URL**: https://your-ai-app-builder-url.com
+7cf4977 (Initial commit):frontend/README.md
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
+HEAD:frentend/README.md
+
+**Use AI App Builder**
+
+Simply visit your AI App Builder dashboard and start prompting.
+
+Changes made via the dashboard will be committed automatically to this repo.
+
+ 7cf4977 (Initial commit):frontend/README.md
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in AI App Builder.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -54,7 +66,15 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+ HEAD:frentend/README.md
 ## Can I connect a custom domain to my Lovable project?
+
+## How can I deploy this project?
+
+Simply open your AI App Builder dashboard and click on Share -> Publish.
+
+## Can I connect a custom domain to my AI App Builder project?
+ 7cf4977 (Initial commit):frontend/README.md
 
 Yes, you can!
 
@@ -62,3 +82,7 @@ To connect a domain, navigate to Project > Settings > Domains and click Connect 
 http://localhost:8080/about
 
 
+HEAD:frentend/README.md
+
+Read more here: [Setting up a custom domain](https://docs.ai-app-builder.com/tips-tricks/custom-domain#step-by-step-guide)
+7cf4977 (Initial commit):frontend/README.md
